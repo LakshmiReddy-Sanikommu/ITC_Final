@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <h1>Lights Out</h1>
+    <div class="form-group">
+        <label for="gridSizeSelect">Select Grid Size:</label>
+        <select id="gridSizeSelect">
+            <option value="2">2x2</option>
+            <option value="3">3x3</option>
+            <option value="4">4x4</option>
+            <option value="6">6x6</option>
+            <option value="8">8x8</option>
+            <option value="9">9x9</option>
+        </select><br>
+    </div>
+    <button id="startButton">Start Game</button><br>
+    <div class="grid" id="grid"></div>
+    <div id="popup-container" class="popup-container">
+        <button class="popup-button" onclick="restartGame()">Start New Game</button>
+    </div>
+    
+
+    <div class="info">
+        <p>Moves: <span id="moveCounter">0</span>&nbsp;&nbsp; || &nbsp;&nbsp;Time: <span id="timer">0:00</span></p>
+    </div>
+    <div id="confetti-container"></div>
+    <button id="restartButton">Restart Game</button>
+    <P>
+        You need to make all the boxes into <strong>White</strong> to win the game
+    </P>
+
+    <footer>
+        <h1 style="text-align: center;">Addendum</h1>
+          <p>
+            <strong>Initialization:</strong> The code starts by adding an event listener to the DOMContentLoaded event, ensuring that the script runs after the HTML document has been completely loaded.
+          </p>
+          
+          <p>
+            <strong>Variables:</strong> Various elements and variables are declared and initialized, including references to HTML elements (e.g., grid, toast, moveCounter, timerDisplay, startButton, restartButton) and variables to keep track of the game state (e.g., cells, moveCount, timerSeconds, gameStarted, confettiActive).
+          </p>
+          
+          <p>
+            <strong>Grid Creation:</strong> The createGrid function is defined using a Promise. It dynamically creates a grid of cells based on the selected grid size. Each cell is a div element, and the grid is represented as a 2D array (cells). The initial state of each cell is set randomly.
+          </p>
+          
+          <p>
+            <strong>Cell Toggle and Update:</strong> The toggleCell function is responsible for handling cell clicks. It toggles the state of the clicked cell and its adjacent cells, updates the grid, and checks if the player has won.
+          </p>
+          
+          <p>
+            <strong>Confetti Animation:</strong> The code includes functions (startConfetti and stopConfetti) to trigger a confetti animation when the player wins the game. It uses the particlesJS library to create a confetti effect.
+          </p>
+          
+          <p>
+            <strong>Game Control Functions:</strong> Functions like startTimer, stopTimer, stopGame, checkWin, updateMoveCounter, and updateTimer manage various aspects of the game, including timing, game state, and win conditions.
+          </p>
+          
+          <p>
+            <strong>Popup Display:</strong> When the player wins, a congratulatory popup is displayed with game statistics such as the number of moves and time taken. The popup also includes a button to start a new game.
+          </p>
+          
+          <p>
+            <strong>Event Listeners:</strong> Event listeners are added to the grid cells, start button, and restart button to handle user interactions.
+          </p>
+          
+          <p>
+            <strong>Initialization:</strong> Finally, the grid creation function is called to initialize the game.
+          </p>
+          
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
